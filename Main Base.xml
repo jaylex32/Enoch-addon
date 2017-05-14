@@ -16,8 +16,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 </regex>
 </item>
 <item>
-<name>Phoenix Tv Shows</name>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixshows.png</thumbnail>
+<name></name>
+<thumbnail></thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -25,7 +25,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin.com/tv/phshows.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -42,7 +42,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin.com/phoenixkids/phoenixkidshome.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -50,8 +50,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 </regex>
 </item>
 <item>
-<name>Alpha Reborn</name>
-<thumbnail>http://alphareborn.offshorepastebin.com/arb/images/alphareborn.png</thumbnail> 
+<name></name>
+<thumbnail></thumbnail> 
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -59,7 +59,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://alphareborn.offshorepastebin.com/arb/home.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -69,8 +69,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://alphareborn.offshorepasteb
 
 
 <item>
-<name>Crusader88</name>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/crusadericon.png</thumbnail>
+<name></name>
+<thumbnail></thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -78,7 +78,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://alphareborn.offshorepasteb
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://crusader88.offshorepastebin.com/main.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -86,8 +86,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://crusader88.offshorepastebi
 </regex>
 </item>
 <item>
-<name>Diva's Den</name>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/DivaLogo.jpg</thumbnail>
+<name></name>
+<thumbnail></thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -95,7 +95,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://crusader88.offshorepastebi
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://one242415.offshorepastebin.com/Diva/Diva_Directory.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -103,8 +103,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://one242415.offshorepastebin
 </regex>
 </item>
 <item>
-<name>MorePower</name>
-<thumbnail>https://pbs.twimg.com/profile_images/378800000267941465/73efacc8d0db05ff9937dee1a90d7f8a.png</thumbnail> 
+<name></name>
+<thumbnail></thumbnail> 
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -112,7 +112,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://one242415.offshorepastebin
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://morepower.offshorepastebin.com/MorePower_Directory.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -121,8 +121,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://morepower.offshorepastebin
 </item>
 
 <item>
-<name>PD Sports VOD</name>
-<thumbnail>http://projectd.offshorepastebin.com/images/pdsports.png</thumbnail> 
+<name></name>
+<thumbnail></thumbnail> 
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
@@ -130,7 +130,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://morepower.offshorepastebin
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.com/pdsports/projectd.xml'):
     from resources.lib.modules import control
-    if not control.infoLabel('Container.PluginName') == 'plugin.video.phstreams': return
+    if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import phstreams
     phstreams.indexer().get(url)
 ]]></expres>
@@ -141,21 +141,21 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.
 
 <plugin>
 <name>Search Sections</name>
-<link>plugin://plugin.video.phstreams/?action=search</link>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixsearch.png</thumbnail>
+<link>plugin://plugin.video.Enoch/?action=search</link>
+<thumbnail></thumbnail>
 </plugin>
 <plugin>
 <name>30721</name>
-<link>plugin://plugin.video.phstreams/?action=downloader</link>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixdownloads.png</thumbnail>
+<link>plugin://plugin.video.Enoch/?action=downloader</link>
+<thumbnail></thumbnail>
 </plugin>
 <plugin>
 <name>30701</name>
-<link>plugin://plugin.video.phstreams/?action=openSettings</link>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixsettings.png</thumbnail>
+<link>plugin://plugin.video.Enoch/?action=openSettings</link>
+<thumbnail></thumbnail>
 </plugin>
 <plugin>
 <name>Testings</name>
-<link>plugin://plugin.video.phstreams/?action=developer</link>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixtestings.png</thumbnail>
+<link>plugin://plugin.video.Enoch/?action=developer</link>
+<thumbnail></thumbnail>
 </plugin>
