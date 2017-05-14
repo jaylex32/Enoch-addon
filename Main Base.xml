@@ -33,8 +33,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 </regex>
 </item>
 <item>
-<name>Phoenix Kids</name>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/main/newmain/phoenixkids.png</thumbnail>
+<name></name>
+<thumbnail></thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
