@@ -9,7 +9,7 @@
 def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Movies.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -26,7 +26,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin.com/tv/phshows.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -43,7 +43,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin.com/phoenixkids/phoenixkidshome.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -60,7 +60,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://alphareborn.offshorepastebin.com/arb/home.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -79,7 +79,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://alphareborn.offshorepasteb
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://crusader88.offshorepastebin.com/main.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -96,7 +96,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://crusader88.offshorepastebi
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://one242415.offshorepastebin.com/Diva/Diva_Directory.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -113,7 +113,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://one242415.offshorepastebin
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://morepower.offshorepastebin.com/MorePower_Directory.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
@@ -131,7 +131,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://morepower.offshorepastebin
 def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.com/pdsports/projectd.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
-    from resources.lib.indexers import phstreams
+    from resources.lib.indexers import Enoch
     phstreams.indexer().get(url)
 ]]></expres>
 <page></page>
