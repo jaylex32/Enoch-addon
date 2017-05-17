@@ -140,11 +140,6 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.
 
 
 <plugin>
-<name>Search Sections</name>
-<link>plugin://plugin.video.Enoch/?action=search</link>
-<thumbnail>https://img.clipartfest.com/138e1aacb072deb432c24c7abb20c8aa_search-button-without-text-search-clipart-png_300-300.png</thumbnail>
-</plugin>
-<plugin>
 <name>30701</name>
 <link>plugin://plugin.video.Enoch/?action=openSettings</link>
 <thumbnail>http://www.freeiconspng.com/uploads/settings-icon-21.png</thumbnail>
