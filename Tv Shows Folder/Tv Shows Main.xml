@@ -42,9 +42,16 @@
 
 <dir>
 <name>Gotham</name>
-<link></link>
 <thumbnail>http://thetvdb.com/banners/posters/274431-1.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/274431-25.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt3749900</imdb>
+<tvdb>274431</tvdb>
+<tvshowtitle>Gotham</tvshowtitle>
+<year>2014</year>
+</meta>
+<link>phoenix</link>
 </dir>
 
 <dir>
