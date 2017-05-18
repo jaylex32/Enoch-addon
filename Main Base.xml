@@ -141,7 +141,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.
 
 <plugin>
 <name>Search</name>
-<link>plugin://plugin.video.phstreams/?action=search</link>
+<link>plugin://plugin.video.Enoch/?action=search</link>
 <thumbnail>http://download.seaicons.com/icons/alecive/flatwoken/512/Apps-Search-Log-icon.png</thumbnail>
 </plugin>
 <plugin>
