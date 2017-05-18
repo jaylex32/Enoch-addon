@@ -1,5 +1,13 @@
 <dir>
 <name>Season 1</name>
+<meta>
+<content>Season</content>
+<season>1</season>
+<imdb>tt3107288</imdb>
+<tvdb>279121</tvdb>
+<tvshowtitle>The Flash</tvshowtitle>
+<year>2014</year>
+</meta>
 <link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Tv%20Shows%20Folder/The%20Flash%20Season%201.xml</link>
 <thumbnail>http://thetvdb.com/banners/posters/279121-27.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/279121-30.jpg</fanart>
@@ -7,7 +15,15 @@
 
 <dir>
 <name>Season 2</name>
-<link></link>
+<meta>
+<content>Season</content>
+<season>2</season>
+<imdb>tt3107288</imdb>
+<tvdb>279121</tvdb>
+<tvshowtitle>The Flash</tvshowtitle>
+<year>2014</year>
+</meta>
+<link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Tv%20Shows%20Folder/The%20Flash%20Season%202.xml</link>
 <thumbnail>http://thetvdb.com/banners/posters/279121-27.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/279121-30.jpg</fanart>
 </dir>
