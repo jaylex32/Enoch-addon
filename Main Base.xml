@@ -33,14 +33,14 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 </regex>
 </item>
 <item>
-<name></name>
-<thumbnail></thumbnail>
+<name>Live Tv</name>
+<thumbnail>http://mksolimpia.com/wp-content/uploads/2015/12/LIVE.png</thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
 <listrepeat>dir</listrepeat>
 <expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = 'http://phoenixtv.offshorepastebin.com/phoenixkids/phoenixkidshome.xml'):
+def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Iptv%20list.xml'):
     from resources.lib.modules import control
     if not control.infoLabel('Container.PluginName') == 'plugin.video.Enoch': return
     from resources.lib.indexers import Enoch
