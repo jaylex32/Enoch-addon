@@ -7,8 +7,8 @@
 #EXTM3U
 
 
-#EXTINF:-1,UK: BBC 1 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20318.ts
+#EXTINF:-1,Animal Planet
+http://v2.ustreamix.com/stream.php?id=animal-planet
 #EXTINF:-1,UK: BBC 4 HD
 http://iptv.iptvthebest.net:15000/live/saghir/saghir/20317.ts
 #EXTINF:-1,UK: BBC News
