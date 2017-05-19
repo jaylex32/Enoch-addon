@@ -1,359 +1,191 @@
-#EXTM3U
-#EXTINF:0, [COLOR white]Welcome to Enoch Tv[/COLOR]
-#EXTM3U
+<item>
+<title>IPTV USA</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[makelist.param3]</title>
+<link>$doregex[cosmix]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
 
-#EXTM3U
-#EXTINF:0, [COLOR white][B]====[COLOR white][I]Links for the Channels are updated daily[/I][/COLOR]====[/B][/COLOR]
-#EXTM3U
+    main = ''
+    main += client.request('https://albaniaiptv.com/category/usa/')
+    link = client.parseDOM(main, 'div', attrs = {'class': 'td_module_1 td_module_wrap td-animation-stack'})
+    link = [(client.parseDOM(i, 'a', ret='href')  , client.parseDOM(i, 'img', ret='src') , client.parseDOM(i, 'img', ret='title')) for i in link]
+    link = [(i[0][0], i[1][0], i[2][0]) for i in link]
+    return link
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>cosmix</name>
+<listrepeat><![CDATA[
+<title>[cosmix.param1]</title>
+<link>[cosmix.param2]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
 
+    html = client.request('[makelist.param1]')
+    express = '<p><a href="(.+?)".+?<\/a><\/p>'
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
+    main = client.request(links)
+    express1 = '#EXTINF:.+?,(.+?)\n(.+?)\s'
+    list = re.compile(express1, re.MULTILINE|re.DOTALL).findall(main)
+    return list
+]]></expres>
+<page></page>
+</regex>
+</item>
 
-#EXTINF:-1,Animal Planet
-http://v2.ustreamix.com/stream.php?id=animal-planet
-#EXTINF:-1,UK: BBC 4 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20317.ts
-#EXTINF:-1,UK: BBC News
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20316.ts
-#EXTINF:-1,UK: BBC Two
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20315.ts
-#EXTINF:-1,UK: BBC_one
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20314.ts
-#EXTINF:-1,UK: BET Star
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20313.ts
-#EXTINF:-1,UK: BoomeRang
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20312.ts
-#EXTINF:-1,UK: BT Sport | ESPN HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20311.ts
-#EXTINF:-1,UK: BT Sport 1 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20310.ts
-#EXTINF:-1,UK: BT Sport 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20309.ts
-#EXTINF:-1,UK: BT Sport 3 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20308.ts
-#EXTINF:-1,UK: BT Sport ESPN
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20307.ts
-#EXTINF:-1,UK: BT Sport Extra 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20306.ts
-#EXTINF:-1,UK: BT Sport Extra 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20305.ts
-#EXTINF:-1,UK: BT Sport Extra 3
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20304.ts
-#EXTINF:-1,UK: BT Sport Extra 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20303.ts
-#EXTINF:-1,UK: BT Sport Extra 5
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20302.ts
-#EXTINF:-1,UK: BT Sport Extra 6
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20301.ts
-#EXTINF:-1,UK: BT Sports 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20300.ts
-#EXTINF:-1,UK: BT Sports 1 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20299.ts
-#EXTINF:-1,UK: BT Sports 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20298.ts
-#EXTINF:-1,UK: BT Sports 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20297.ts
-#EXTINF:-1,UK: BT Sports 3 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20296.ts
-#EXTINF:-1,UK: Cartoon Network
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20295.ts
-#EXTINF:-1,UK: CBBC Three
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20294.ts
-#EXTINF:-1,UK: CBS Action
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20293.ts
-#EXTINF:-1,UK: CBS Drama
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20292.ts
-#EXTINF:-1,UK: CBS Reality
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20291.ts
-#EXTINF:-1,UK: Channel 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20290.ts
-#EXTINF:-1,UK: CHANNEL 5
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20289.ts
-#EXTINF:-1,UK: Channel AKA
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20288.ts
-#EXTINF:-1,UK: Chelsea FC
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20287.ts
-#EXTINF:-1,UK: Chelsea TV
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20286.ts
-#EXTINF:-1,UK: China History Channel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20285.ts
-#EXTINF:-1,UK: Cinema Premiere (Beauty and the Beast 2017)
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20284.ts
-#EXTINF:-1,UK: Comedy Central
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20283.ts
-#EXTINF:-1,UK: Dave
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20282.ts
-#EXTINF:-1,UK: Discovery
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20281.ts
-#EXTINF:-1,UK: Discovery Channel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20280.ts
-#EXTINF:-1,UK: Discovery History
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20279.ts
-#EXTINF:-1,UK: Discovery History  1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20278.ts
-#EXTINF:-1,UK: Discovery Home Health
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20277.ts
-#EXTINF:-1,UK: Discovery Science
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20276.ts
-#EXTINF:-1,UK: Discovery Turbo
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20275.ts
-#EXTINF:-1,UK: Disney Junior
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20274.ts
-#EXTINF:-1,UK: Disney XD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20273.ts
-#EXTINF:-1,UK: DW English
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20272.ts
-#EXTINF:-1,UK: E!
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20271.ts
-#EXTINF:-1,UK: Eir Sport 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20270.ts
-#EXTINF:-1,UK: Eir Sport 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20269.ts
-#EXTINF:-1,UK: EuroSport 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20268.ts
-#EXTINF:-1,UK: Film 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20267.ts
-#EXTINF:-1,UK: Film 4 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20266.ts
-#EXTINF:-1,UK: FLAVA
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20265.ts
-#EXTINF:-1,UK: FOX
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20264.ts
-#EXTINF:-1,UK: FOX SD.
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20263.ts
-#EXTINF:-1,UK: Gold TV
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20262.ts
-#EXTINF:-1,UK: Good Food
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20144.ts
-#EXTINF:-1,UK: HBO
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20261.ts
-#EXTINF:-1,UK: HBO Comedy HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20260.ts
-#EXTINF:-1,UK: History Channel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20259.ts
-#EXTINF:-1,UK: Hunting Channel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20258.ts
-#EXTINF:-1,UK: Insight HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20257.ts
-#EXTINF:-1,UK: INVESTIGATION DISCOVERY
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20256.ts
-#EXTINF:-1,UK: ITV 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20255.ts
-#EXTINF:-1,UK: ITV 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20254.ts
-#EXTINF:-1,UK: ITV 3
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20253.ts
-#EXTINF:-1,UK: ITV 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20252.ts
-#EXTINF:-1,UK: Itv Encore
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20251.ts
-#EXTINF:-1,UK: ITVBE
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20250.ts
-#EXTINF:-1,UK: Life Time
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20249.ts
-#EXTINF:-1,UK: Liverpool FC
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20248.ts
-#EXTINF:-1,UK: Manchester United FC
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20247.ts
-#EXTINF:-1,UK: Manchester United TV
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20246.ts
-#EXTINF:-1,UK: More4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20245.ts
-#EXTINF:-1,UK: Movies24
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20244.ts
-#EXTINF:-1,UK: Movies4Man
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20243.ts
-#EXTINF:-1,UK: Movies4Man1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20242.ts
-#EXTINF:-1,UK: MTV
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20241.ts
-#EXTINF:-1,UK: MTV Base
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20240.ts
-#EXTINF:-1,UK: MTV Base HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20239.ts
-#EXTINF:-1,UK: MTV Classic
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20238.ts
-#EXTINF:-1,UK: MTV Dance
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20237.ts
-#EXTINF:-1,UK: MTV Dance HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20236.ts
-#EXTINF:-1,UK: MTV EUROPE HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20235.ts
-#EXTINF:-1,UK: MTV Hits
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20234.ts
-#EXTINF:-1,UK: MTV Hits HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20233.ts
-#EXTINF:-1,UK: MTV Live HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20232.ts
-#EXTINF:-1,UK: MTV Music
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20231.ts
-#EXTINF:-1,UK: MTV Rocks
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20230.ts
-#EXTINF:-1,UK: MTV Rocks HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20229.ts
-#EXTINF:-1,UK: Nat Geo Wild
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20228.ts
-#EXTINF:-1,UK: National Geographic Channel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20227.ts
-#EXTINF:-1,UK: NIck JR
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20226.ts
-#EXTINF:-1,UK: Nick JR 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20225.ts
-#EXTINF:-1,UK: Nick JR Peppa
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20224.ts
-#EXTINF:-1,UK: Nickelodeon
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20223.ts
-#EXTINF:-1,UK: NickToons
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20222.ts
-#EXTINF:-1,UK: PICK
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20221.ts
-#EXTINF:-1,UK: Quest
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20220.ts
-#EXTINF:-1,UK: REALLY
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20219.ts
-#EXTINF:-1,UK: RTE 3 J.R
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20218.ts
-#EXTINF:-1,UK: RTE One
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20217.ts
-#EXTINF:-1,UK: RTE Two
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20216.ts
-#EXTINF:-1,UK: Russia Today Documetary
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20215.ts
-#EXTINF:-1,UK: Russia Today News
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20214.ts
-#EXTINF:-1,UK: Setanta Sport
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20213.ts
-#EXTINF:-1,UK: Sky Arts
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20212.ts
-#EXTINF:-1,UK: SKY Atlantic HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20211.ts
-#EXTINF:-1,UK: Sky Box Office (ppv events only)
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20210.ts
-#EXTINF:-1,UK: Sky MotoGP
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20209.ts
-#EXTINF:-1,UK: Sky Movies  Premiere
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20208.ts
-#EXTINF:-1,UK: Sky Movies Action
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20207.ts
-#EXTINF:-1,UK: Sky Movies Action & Adventure HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20206.ts
-#EXTINF:-1,UK: Sky Movies Comedy HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20205.ts
-#EXTINF:-1,UK: Sky Movies Crime &Thriller HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20204.ts
-#EXTINF:-1,UK: SKY Movies Disney HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20203.ts
-#EXTINF:-1,UK: Sky Movies Drama & Romance
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20202.ts
-#EXTINF:-1,UK: Sky Movies Drama & Romance.
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20201.ts
-#EXTINF:-1,UK: Sky Movies Family HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20200.ts
-#EXTINF:-1,UK: Sky Movies Greats HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20199.ts
-#EXTINF:-1,UK: Sky Movies Hits Showcase HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20198.ts
-#EXTINF:-1,UK: SKY Movies Premier HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20197.ts
-#EXTINF:-1,UK: Sky Movies Sci-fi & Horror HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20196.ts
-#EXTINF:-1,UK: Sky Movies Select
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20195.ts
-#EXTINF:-1,UK: Sky News
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20194.ts
-#EXTINF:-1,UK: Sky One HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20193.ts
-#EXTINF:-1,UK: Sky Sport 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20192.ts
-#EXTINF:-1,UK: SKY Sport 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20191.ts
-#EXTINF:-1,UK: Sky Sport 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20190.ts
-#EXTINF:-1,UK: Sky Sport 3
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20189.ts
-#EXTINF:-1,UK: Sky Sport 3 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20188.ts
-#EXTINF:-1,UK: Sky Sport 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20187.ts
-#EXTINF:-1,UK: Sky Sport 5 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20186.ts
-#EXTINF:-1,UK: Sky Sport F1 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20185.ts
-#EXTINF:-1,UK: Sky Sport News HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20184.ts
-#EXTINF:-1,UK: Sky Sports 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20183.ts
-#EXTINF:-1,UK: Sky Sports 1 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20182.ts
-#EXTINF:-1,UK: Sky Sports 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20181.ts
-#EXTINF:-1,UK: Sky Sports 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20180.ts
-#EXTINF:-1,UK: Sky Sports 3
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20179.ts
-#EXTINF:-1,UK: Sky Sports 3 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20178.ts
-#EXTINF:-1,UK: Sky Sports 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20177.ts
-#EXTINF:-1,UK: Sky Sports 4 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20176.ts
-#EXTINF:-1,UK: Sky Sports 5
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20175.ts
-#EXTINF:-1,UK: Sky Sports 5 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20174.ts
-#EXTINF:-1,UK: Sky Sports F1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20173.ts
-#EXTINF:-1,UK: Sky Sports MIX HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20172.ts
-#EXTINF:-1,UK: Sky Thriller
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20171.ts
-#EXTINF:-1,UK: SKY Two HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20170.ts
-#EXTINF:-1,UK: SkySelect
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20169.ts
-#EXTINF:-1,UK: SkyShowcase
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20168.ts
-#EXTINF:-1,UK: Sony Max
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20167.ts
-#EXTINF:-1,UK: Sony Movie
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20166.ts
-#EXTINF:-1,UK: Sony Sab
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20165.ts
-#EXTINF:-1,UK: SONY TV
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20164.ts
-#EXTINF:-1,UK: Star Gold
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20163.ts
-#EXTINF:-1,UK: Star LifeOK (hindi)
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20162.ts
-#EXTINF:-1,UK: SuperSport 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20161.ts
-#EXTINF:-1,UK: SuperSport 3
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20160.ts
-#EXTINF:-1,UK: SuperSport 4
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20159.ts
-#EXTINF:-1,UK: SuperSport 5
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20158.ts
-#EXTINF:-1,UK: SuperSport 6
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20157.ts
-#EXTINF:-1,UK: SYFY
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20156.ts
-#EXTINF:-1,UK: TCM (film)
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20155.ts
-#EXTINF:-1,UK: TLC
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20154.ts
-#EXTINF:-1,UK: TLC-IRELAND
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20153.ts
-#EXTINF:-1,UK: Travel
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20152.ts
-#EXTINF:-1,UK: Tring Sport 2 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20151.ts
-#EXTINF:-1,UK: Tring Sport 3 HD
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20150.ts
-#EXTINF:-1,UK: True Movies 1
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20149.ts
-#EXTINF:-1,UK: True Movies 2
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20148.ts
-#EXTINF:-1,UK: TV Nasa
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20147.ts
-#EXTINF:-1,UK: VH1 CLASSIC
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20146.ts
-#EXTINF:-1,UK: Watch
-http://iptv.iptvthebest.net:15000/live/saghir/saghir/20145.ts
+<item>
+<title>IPTV UK</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[makelist.param3]</title>
+<link>$doregex[cosmix]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    main = ''
+    main += client.request('https://albaniaiptv.com/category/uk/')
+    link = client.parseDOM(main, 'div', attrs = {'class': 'td_module_1 td_module_wrap td-animation-stack'})
+    link = [(client.parseDOM(i, 'a', ret='href')  , client.parseDOM(i, 'img', ret='src') , client.parseDOM(i, 'img', ret='title')) for i in link]
+    link = [(i[0][0], i[1][0], i[2][0]) for i in link]
+    return link
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>cosmix</name>
+<listrepeat><![CDATA[
+<title>[cosmix.param1]</title>
+<link>[cosmix.param2]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    html = client.request('[makelist.param1]')
+    express = '<p><a href="(.+?)".+?<\/a><\/p>'
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
+    main = client.request(links)
+    express1 = '#EXTINF:.+?,(.+?)\n(.+?)\s'
+    list = re.compile(express1, re.MULTILINE|re.DOTALL).findall(main)
+    return list
+]]></expres>
+<page></page>
+</regex>
+</item>
+
+<item>
+<title>IPTV SPAIN</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[makelist.param3]</title>
+<link>$doregex[cosmix]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    main = ''
+    main += client.request('https://albaniaiptv.com/category/spain/')
+    link = client.parseDOM(main, 'div', attrs = {'class': 'td_module_1 td_module_wrap td-animation-stack'})
+    link = [(client.parseDOM(i, 'a', ret='href')  , client.parseDOM(i, 'img', ret='src') , client.parseDOM(i, 'img', ret='title')) for i in link]
+    link = [(i[0][0], i[1][0], i[2][0]) for i in link]
+    return link
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>cosmix</name>
+<listrepeat><![CDATA[
+<title>[cosmix.param1]</title>
+<link>[cosmix.param2]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    html = client.request('[makelist.param1]')
+    express = '<p><a href="(.+?)".+?<\/a><\/p>'
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
+    main = client.request(links)
+    express1 = '#EXTINF:.+?,(.+?)\n(.+?)\s'
+    list = re.compile(express1, re.MULTILINE|re.DOTALL).findall(main)
+    return list
+]]></expres>
+<page></page>
+</regex>
+</item>
+
+<item>
+<title>IPTV SPORT</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[makelist.param3]</title>
+<link>$doregex[cosmix]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    main = ''
+    main += client.request('https://albaniaiptv.com/category/sport/')
+    link = client.parseDOM(main, 'div', attrs = {'class': 'td_module_1 td_module_wrap td-animation-stack'})
+    link = [(client.parseDOM(i, 'a', ret='href')  , client.parseDOM(i, 'img', ret='src') , client.parseDOM(i, 'img', ret='title')) for i in link]
+    link = [(i[0][0], i[1][0], i[2][0]) for i in link]
+    return link
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>cosmix</name>
+<listrepeat><![CDATA[
+<title>[cosmix.param1]</title>
+<link>[cosmix.param2]</link>
+<thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, base64, xbmcgui, json
+
+    html = client.request('[makelist.param1]')
+    express = '<p><a href="(.+?)".+?<\/a><\/p>'
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
+    main = client.request(links)
+    express1 = '#EXTINF:.+?,(.+?)\n(.+?)\s'
+    list = re.compile(express1, re.MULTILINE|re.DOTALL).findall(main)
+    return list
+]]></expres>
+<page></page>
+</regex>
+</item>
