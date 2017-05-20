@@ -115,9 +115,16 @@
 </dir>
 
 <dir>
-<name></name>
-<link></link>
+<name>New Episodes</name>
+<link>https://opentuner.is/new-episodes/</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
+<meta>
+<content>opentuner</content>
+<imdb></imdb>
+<tvdb></tvdb>
+<tvshowtitle>New Episodes</tvshowtitle>
+<year>2017</year>
+</meta>
 </dir>
 
