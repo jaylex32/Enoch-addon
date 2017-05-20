@@ -121,16 +121,3 @@
 <fanart></fanart>
 </dir>
 
-<dir>
-<name>New Episodes</name>
-<link>https://opentuner.is/new-episodes/</link>
-<thumbnail></thumbnail>
-<fanart></fanart>
-<meta>
-<content>tvshow</content>
-<imdb></imdb>
-<tvdb></tvdb>
-<tvshowtitle>New Episodes</tvshowtitle>
-<year>2017</year>
-</meta>
-</dir>
