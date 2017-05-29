@@ -5,7 +5,7 @@
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>title=(.+?/)</title>
+        <title>[makelist.param1]</title>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
@@ -14,7 +14,7 @@
         <meta>
         <content>tuner</content>
         <imdb></imdb>
-        <title>title=(.+?/)</title>
+        <title>[makelist.param1]</title>
         <year></year>
         </meta>
 ]]></listrepeat>
