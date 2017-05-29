@@ -12,7 +12,7 @@
         <thumbnail></thumbnail>
         </link>
         <meta>
-        <content>tvshow</content>
+        <content>tuner</content>
         <imdb></imdb>
         <title>title=(.+?/)</title>
         <year></year>
