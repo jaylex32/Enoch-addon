@@ -209,6 +209,48 @@
 </dir>
 
 <dir>
+<name>Breaking Bad</name>
+<thumbnail>https://image.tmdb.org/t/p/w500/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg</thumbnail>
+<fanart>https://image.tmdb.org/t/p/w1280/n5kIjzyYNdDfJbfNkG68j3qDm6n.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt0903747</imdb>
+<tvdb>81189</tvdb>
+<tvshowtitle>Breaking Bad</tvshowtitle>
+<year>2008</year>
+</meta>
+<link>phoenix</link>
+</dir>
+
+<dir>
+<name>Brooklyn Nine-Nine</name>
+<thumbnail>https://image.tmdb.org/t/p/w500/5YtO7dEn6SJimgNG7ECQIIDzfaF.jpg</thumbnail>
+<fanart>https://image.tmdb.org/t/p/w1280/w67SgMiq56v1rO2IIW88W3HWPDZ.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt2467372</imdb>
+<tvdb>269586</tvdb>
+<tvshowtitle>Brooklyn Nine-Nine</tvshowtitle>
+<year>2013</year>
+</meta>
+<link>phoenix</link>
+</dir>
+
+<dir>
+<name>Bull</name>
+<thumbnail>https://image.tmdb.org/t/p/w500/9ONwYgzhiNhiNE7007ABN4OLXoI.jpg</thumbnail>
+<fanart>https://image.tmdb.org/t/p/w1280/9Dt2zXy2uOrMzHXSVNsaAyaSSZM.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt5827228</imdb>
+<tvdb>311945</tvdb>
+<tvshowtitle>Bull</tvshowtitle>
+<year>2016</year>
+</meta>
+<link>phoenix</link>
+</dir>
+
+<dir>
 <name>Modern Family</name>
 <thumbnail>https://images-na.ssl-images-amazon.com/images/M/MV5BNzRjOTE1ZTEtMTkwYy00MDQ4LTkxMmYtNzgxMWFlY2YyZjU2XkEyXkFqcGdeQXVyMzAzNTY3MDM@._V1_.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/95011-2.jpg</fanart>
