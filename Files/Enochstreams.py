@@ -121,7 +121,7 @@ class streamer:
         try:
             u = client.request(url)
             e = re.findall('<li.+?on ([^"]*).+?f="([^"]*)', u)
-            e = [(i[0],i[1]) for i in e if 'movie2k' not in i[1]]
+            e = re.findall('iframe src="([^"]*)', u)[0]
             return e
         except:
             return re.findall('(?s)id="tab-popular">.+?href="([^"]*)', u)[0]
