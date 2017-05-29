@@ -65,9 +65,9 @@ def GetLSProData(page_data,Cookie_Jar,m,url = '[eps.param1]'):
     from resources.lib.modules import client
     import re, urllib, xbmc, xbmcgui
     from resources.lib.modules import control
-    phoenixstreamer = control.cdnImport('https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Files/Enochtvsteam.py')
-    phoenixstreamer = phoenixstreamer.streamer()
-    url = phoenixstreamer.resolve(url)
+    Enochtvsteam = control.cdnImport('https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Files/Enochtvsteam.py', 'Enochtvsteam')
+    Enochtvsteam = Enochtvsteam.streamer()
+    url = Enochtvsteam.resolve(url)
     return url
 ]]></expres>
 <page></page>
