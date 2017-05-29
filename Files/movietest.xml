@@ -1,5 +1,5 @@
 <item>
-<title>Movie 2K Movies A-Z</title>
+<title>Movie 2K</title>
 <thumbnail>http://www.movie2k.am/images/favicon.ico</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
