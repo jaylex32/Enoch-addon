@@ -15,7 +15,7 @@ class streamer:
             
             if 'linkmovie25.com' in url: u = self.linkmovie25(url)
             
-            if '123hulu' in url: u = self.hulu123(url)
+            if 'movie2k.am' in url: u = self.movie2k(url)
             
             else: u = self.generic(url)
 
@@ -117,7 +117,7 @@ class streamer:
         except:
             return
             
-    def hulu123(self, url):
+    def movie2k(self, url):
         try:
             u = client.request(url)
             e = re.findall('document.write.+?"([^"]*)', u)[0]
