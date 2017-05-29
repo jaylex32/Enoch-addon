@@ -121,8 +121,7 @@ class streamer:
         try:
             u = client.request(url)
             e = re.findall('<li.+?on ([^"]*).+?f="([^"]*)', u)
-            e = base64.b64decode(e)
-            e = [(i[0],i[1]) for i in e if 'Filme' not in i[1]]
+            e = [(i[0],i[1]) for i in e if 'movie2k' not in i[1]]
             return e
         except:
-            return re.findall('(?s)id="media-player">.+?href="([^"]*)', u)[0]
+            return re.findall('(?s)id="header">.+?href="([^"]*)', u)[0]
