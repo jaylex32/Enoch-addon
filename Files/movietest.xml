@@ -24,7 +24,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
             self.r += [(i[0], str(client.request(i[1])))]       
 
     url = []
-    for i in range(1, 5): url += ['http://www.movie2k.am/a-z-movies/page-' + str(i) + '.html']
+    for i in range(1, 5): url += ['http://www.movie2k.am/page-' + str(i) + '.html']
     u = cache.get(page().run, 0, url)
     e = re.findall('(?s)id="movie-f.+?f="([^"]*).+?<i>([^<]*).+?Release:\s([^<]*).+?c="([^"]*)', u)
     return e
