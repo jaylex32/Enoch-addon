@@ -21,12 +21,15 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
             [i.start() for i in threads] ; [i.join() for i in threads]
             return ''.join([str(i[1]) for i in sorted(self.r, key=lambda x: x[0])])
         def request(self, i):
-            self.r += [(i[0], str(client.request(i[1])))]       
+            self.r += [(i[0], str(client.request(i[1])))]
+    def unescape(s):
+        return re.sub('&#(\d+);', '', s)       
 
     url = []
     for i in range(1, 5): url += ['http://www.movie2k.am/page-' + str(i)]
     u = cache.get(page().run, 0, url)
-    e = re.findall('(?s)id="tab-popular-f.+?f="([^"]*).+?<i>([^<]*).+?#popular:\s([^<]*).+?c="([^"]*)', u)
+    e = re.findall('(?s)title">.+?f="([^"]*).+?c="([^"]*).+?alt="([^"]*).+?<span>([^<]*)', u)
+    e = [(i[0], unescape(i[1]), i[2], i[3]) for i in e]
     return e
 ]]></expres>
 <page></page>
