@@ -251,6 +251,20 @@
 </dir>
 
 <dir>
+<name>Chicago Fire</name>
+<thumbnail>https://image.tmdb.org/t/p/w500/nQpsWqtZS6RM15HzRWKHVuCBaxz.jpg</thumbnail>
+<fanart>https://image.tmdb.org/t/p/w1280/goinv0B7n61HEzyCFOEGocVxv9j.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt2261391</imdb>
+<tvdb>258541</tvdb>
+<tvshowtitle>Chicago Fire</tvshowtitle>
+<year>2012</year>
+</meta>
+<link>Enoch</link>
+</dir>
+
+<dir>
 <name>Modern Family</name>
 <thumbnail>https://images-na.ssl-images-amazon.com/images/M/MV5BNzRjOTE1ZTEtMTkwYy00MDQ4LTkxMmYtNzgxMWFlY2YyZjU2XkEyXkFqcGdeQXVyMzAzNTY3MDM@._V1_.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/95011-2.jpg</fanart>
