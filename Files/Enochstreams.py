@@ -120,9 +120,9 @@ class streamer:
     def movie2k(self, url):
         try:
             u = client.request(url)
-            e = re.findall('document.write.+?"([^"]*)', u)[0]
+            e = re.findall('<li.+?on ([^"]*).+?f="([^"]*)', u)
             e = base64.b64decode(e)
-            e = re.findall('src="([^"]*)', e)[0]
+            e = [(i[0],i[1]) for i in e if 'Filme' not in i[1]]
             return e
         except:
             return re.findall('(?s)id="media-player">.+?href="([^"]*)', u)[0]
