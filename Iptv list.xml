@@ -1,30 +1,34 @@
 <item>
-<title> https://beta.ustreamix.com/</title>
+<title>us search ustreamix</title>
 <link>$doregex[makelist]</link>
 <regex>
 <name>makelist</name>
 <listrepeat><![CDATA[
-  <title>[COLOR yellow][makelist.param2][/COLOR] [COLOR dodgerblue]([makelist.param3])[/COLOR]</title>
-  <link>$doregex[getUrl]</link>
+  <title>[makelist.param2]([makelist.param3])</title>
+  <link>$doregex[getUrl]|User-Agent=iPad</link>
 ]]></listrepeat>
 <expres><![CDATA[(?s)<p><a href="(.*?)".*?blank">(.*?)\s*<.*?live">(.*?)<]]></expres>
-<page>https://beta.ustreamix.com/</page>
+<page>h**p://v2.ustreamix.com/cr.php?q=usa</page>
 <agent>Mozilla/5.0 (X11; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0 Iceweasel/44.0</agent>
 <cookieJar></cookieJar>
 </regex>
+
 <regex>
 <name>getUrl</name>
 <expres><![CDATA[#$pyFunction
 import re, requests
 def GetLSProData(page_data,Cookie_Jar,m,):
   first_ip = re.findall("x_first_ip.+?'(.*?)'", page_data)[0]
-  preurl = 'https://mir.hulkfiles.com/'  # here is the server url which changed most of time
-  url = preurl + 'stats.php?p=' + first_ip
-  source = requests.get(url, headers = {'Referer': 'https://beta.ustreamix.com/[makelist.param1]', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0 Iceweasel/44.0', 'Accept': '*/*'}).text
+  first_c = re.findall("x_first_c.+?'(.*?)'", page_data)[0]
+  ket2 = re.findall("ket2.+?'(.*?)'", page_data)[0]
+  first_ua = re.findall("x_first_ua.+?'(.*?)'", page_data)[0]
+  preurl = 'h**p://tmg.ustreamix.com/'  # here is the server url which changed most of time
+  url = preurl + 'stats.php?p=' + first_ip + '&C=' + first_c + '&Ket=' + ket2
+  source = requests.get(url, headers = {'Referer': 'htt**ps://beta.ustreamix.com/[makelist.param1]', 'User-Agent': first_ua, 'Accept': '*/*'}).text
   tok = re.findall('var jdtk="(.*?)"', source)[0]
   return preurl + 'tmg.m3u8?' + '[makelist.param1]' + '&token=' + tok
 ]]></expres>
-<page>https://beta.ustreamix.com/[makelist.param1]</page>
+<page>h**ps://beta.ustreamix.com/[makelist.param1]</page>
 <agent>Mozilla/5.0 (X11; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0 Iceweasel/44.0</agent>
 <cookieJar></cookieJar>
 </regex>
