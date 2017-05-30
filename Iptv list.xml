@@ -1,6 +1,7 @@
 <item>
 <title>[COLOR lime] PELISADICTO[/COLOR] Con paginacion</title>
 <link>https://forums.tvaddons.ag/$doregex[makelist3]</link>
+
 <regex>
 <name>makelist3</name>
 <listrepeat><=!=[=C=D=A=T=A=[
@@ -10,17 +11,23 @@
 <expres><=!=[=C=D=A=T=A=[li><a rel="nofollow" href="(.*?)" title="Peliculas de (.*?)"]=]=></expres>
 <page>http://pelisadicto.com/</page>
 </regex>
+
+
+
 <regex>
 <name>showPages</name>
 <listrepeat><=!=[=C=D=A=T=A=[
   <title>[COLOR yellow]Pagina [showPages.param1][/COLOR]</title>
     <link>https://forums.tvaddons.ag/$doregex[makelist2]</link>
+      
 ]=]=></listrepeat>
 <expres>([0-9]+),?</expres>
 <page>$doregex[getPageNumbers]</page>
 <referer></referer>
 <cookieJar></cookieJar>
 </regex>
+
+
 <regex>
 <name>getPageNumbers</name>
 <expres><![CDATA[#$pyFunction
@@ -39,6 +46,10 @@ def GetLSProData(page_data,Cookie_Jar,m,url='http://pelisadicto.com[makelist3.pa
 <referer></referer>
 <cookieJar></cookieJar>
 </regex>
+
+
+
+
 <regex>
 <name>makelist2</name>
 <listrepeat><=!=[=C=D=A=T=A=[
@@ -51,6 +62,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url='http://pelisadicto.com[makelist3.pa
 <page>http://pelisadicto.com/genero/[makelist3.param2]/</page>
 <referer>http://pelisadicto.com/</referer>
 </regex>
+
 <regex>
 <name>makelist</name>
 <listrepeat><=!=[=C=D=A=T=A=[
@@ -60,55 +72,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url='http://pelisadicto.com[makelist3.pa
 <expres><=!=[=C=D=A=T=A=[href="(.*?)" rel="nofollow"]=]=></expres>
 <page>http://pelisadicto.com[makelist2.param1]</page>
 </regex>
-</item>
 
 
-<item>
-<title>IPTV USA</title>
-<link>$doregex[makelist]</link>
-<regex>
-<name>makelist</name>
-<listrepeat><![CDATA[
-<title>[makelist.param3]</title>
-<link>$doregex[cosmix]</link>
-<thumbnail></thumbnail>
-]]></listrepeat>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import client
-    import re, urllib, base64, xbmcgui, json
-
-    main = ''
-    main += client.request('https://albaniaiptv.com/category/usa/')
-    link = client.parseDOM(main, 'div', attrs = {'class': 'td_module_1 td_module_wrap td-animation-stack'})
-    link = [(client.parseDOM(i, 'a', ret='href')  , client.parseDOM(i, 'img', ret='src') , client.parseDOM(i, 'img', ret='title')) for i in link]
-    link = [(i[0][0], i[1][0], i[2][0]) for i in link]
-    return link
-]]></expres>
-<page></page>
-</regex>
-<regex>
-<name>cosmix</name>
-<listrepeat><![CDATA[
-<title>[cosmix.param1]</title>
-<link>[cosmix.param2]</link>
-<thumbnail></thumbnail>
-]]></listrepeat>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import client
-    import re, urllib, base64, xbmcgui, json
-
-    html = client.request('[makelist.param1]')
-    express = '<p><a href="(.+?)".+?<\/a><\/p>'
-    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
-    main = client.request(links)
-    express1 = '#EXTINF:.+?,(.+?)\n(.+?)\s'
-    list = re.compile(express1, re.MULTILINE|re.DOTALL).findall(main)
-    return list
-]]></expres>
-<page></page>
-</regex>
 </item>
 
 <item>
