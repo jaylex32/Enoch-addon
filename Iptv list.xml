@@ -1,37 +1,79 @@
 <item>
-<title>us search ustreamix</title>
-<link>$doregex[makelist]</link>
+<title>[COLOR lime] PELISADICTO[/COLOR] Con paginacion</title>
+<link>https://forums.tvaddons.ag/$doregex[makelist3]</link>
+
 <regex>
-<name>makelist</name>
-<listrepeat><![CDATA[
-  <title>[makelist.param2]([makelist.param3])</title>
-  <link>$doregex[getUrl]|User-Agent=iPad</link>
-]]></listrepeat>
-<expres><![CDATA[(?s)<p><a href="(.*?)".*?blank">(.*?)\s*<.*?live">(.*?)<]]></expres>
-<page>h**p://v2.ustreamix.com/cr.php?q=usa</page>
-<agent>Mozilla/5.0 (X11; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0 Iceweasel/44.0</agent>
+<name>makelist3</name>
+<listrepeat><=!=[=C=D=A=T=A=[
+<title>[COLOR yellow] [makelist3.param2] [/COLOR] </title>
+<link>https://forums.tvaddons.ag/$doregex[showPages]</link>
+]=]=></listrepeat>
+<expres><=!=[=C=D=A=T=A=[li><a rel="nofollow" href="(.*?)" title="Peliculas de (.*?)"]=]=></expres>
+<page>http://pelisadicto.com/</page>
+</regex>
+
+
+
+<regex>
+<name>showPages</name>
+<listrepeat><=!=[=C=D=A=T=A=[
+  <title>[COLOR yellow]Pagina [showPages.param1][/COLOR]</title>
+    <link>https://forums.tvaddons.ag/$doregex[makelist2]</link>
+      
+]=]=></listrepeat>
+<expres>([0-9]+),?</expres>
+<page>$doregex[getPageNumbers]</page>
+<referer></referer>
 <cookieJar></cookieJar>
 </regex>
 
+
 <regex>
-<name>getUrl</name>
+<name>getPageNumbers</name>
 <expres><![CDATA[#$pyFunction
-import re, requests
-def GetLSProData(page_data,Cookie_Jar,m,):
-  first_ip = re.findall("x_first_ip.+?'(.*?)'", page_data)[0]
-  first_c = re.findall("x_first_c.+?'(.*?)'", page_data)[0]
-  ket2 = re.findall("ket2.+?'(.*?)'", page_data)[0]
-  first_ua = re.findall("x_first_ua.+?'(.*?)'", page_data)[0]
-  preurl = 'h**p://tmg.ustreamix.com/'  # here is the server url which changed most of time
-  url = preurl + 'stats.php?p=' + first_ip + '&C=' + first_c + '&Ket=' + ket2
-  source = requests.get(url, headers = {'Referer': 'htt**ps://beta.ustreamix.com/[makelist.param1]', 'User-Agent': first_ua, 'Accept': '*/*'}).text
-  tok = re.findall('var jdtk="(.*?)"', source)[0]
-  return preurl + 'tmg.m3u8?' + '[makelist.param1]' + '&token=' + tok
+import re,requests
+def GetLSProData(page_data,Cookie_Jar,m,url='http://pelisadicto.com[makelist3.param1]'):
+  source=requests.get(url)
+  frompage,topage=re.findall('pagination">.*?href=".*?">([0-9]+)<.*<a href=".*?">([0-9]+)<\/a><\/span><\/li>',source.text, re.DOTALL)[0]
+  frompage=int(1)
+  topage=int(topage)
+  topage=topage+1
+  print range(frompage,topage)
+  return range(frompage,topage)
 ]]></expres>
-<page>h**ps://beta.ustreamix.com/[makelist.param1]</page>
-<agent>Mozilla/5.0 (X11; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0 Iceweasel/44.0</agent>
+<page></page>
+<agent>Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_2_1 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5</agent>
+<referer></referer>
 <cookieJar></cookieJar>
 </regex>
+
+
+
+
+<regex>
+<name>makelist2</name>
+<listrepeat><=!=[=C=D=A=T=A=[
+<title>[COLOR cyan] [makelist2.param2] [/COLOR] </title>
+<link>https://forums.tvaddons.ag/$doregex[makelist]</link>
+<thumbnail>http://pelisadicto.com/[makelist2.param3]</thumbnail>
+<fanart>http://pelisadicto.com/[makelist2.param3]</fanart>
+]=]=></listrepeat>
+<expres><=!=[=C=D=A=T=A=[href="(.*?)" title="Ver (.*?) Online".*\s+.*src="(.*?)"]=]=></expres>
+<page>http://pelisadicto.com/genero/[makelist3.param2]/</page>
+<referer>http://pelisadicto.com/</referer>
+</regex>
+
+<regex>
+<name>makelist</name>
+<listrepeat><=!=[=C=D=A=T=A=[
+<title>[COLOR blue] Opcion: [/COLOR][COLOR yellow] [makelist.param1][/COLOR]</title>
+<link>https://forums.tvaddons.ag/$doregex[makelist0]</link>
+]=]=></listrepeat>
+<expres><=!=[=C=D=A=T=A=[href="(.*?)" rel="nofollow"]=]=></expres>
+<page>http://pelisadicto.com[makelist2.param1]</page>
+</regex>
+
+
 </item>
 
 
