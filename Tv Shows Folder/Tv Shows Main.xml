@@ -3,6 +3,20 @@
 #######################################################################################################################################
 
 <dir>
+<name>Animal Kingdom</name>
+<thumbnail>http://thetvdb.com/banners/posters/304262-2.jpg</thumbnail>
+<fanart>http://thetvdb.com/banners/fanart/original/304262-3.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt5574490</imdb>
+<tvdb>304262</tvdb>
+<tvshowtitle>Animal Kingdom</tvshowtitle>
+<year>2016</year>
+</meta>
+<link>Enoch</link>
+</dir>
+
+<dir>
 <name>Kingdom</name>
 <thumbnail>http://thetvdb.com/banners/posters/283761-1.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/283761-11.jpg</fanart>
@@ -135,8 +149,38 @@
 <meta>
 <content></content>
 <imdb></imdb>
+<tvdb></tvdb>
+<tvshowtitle></tvshowtitle>
 <year></year>
 </meta>
-<link></link>
+<link>Enoch</link>
+</dir>
+
+<dir>
+<name></name>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<meta>
+<content></content>
+<imdb></imdb>
+<tvdb></tvdb>
+<tvshowtitle></tvshowtitle>
+<year></year>
+</meta>
+<link>Enoch</link>
+</dir>
+
+<dir>
+<name></name>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<meta>
+<content></content>
+<imdb></imdb>
+<tvdb></tvdb>
+<tvshowtitle></tvshowtitle>
+<year></year>
+</meta>
+<link>Enoch</link>
 </dir>
 
