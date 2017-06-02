@@ -3,6 +3,20 @@
 #######################################################################################################################################
 
 <dir>
+<name>Kingdom</name>
+<thumbnail>http://thetvdb.com/banners/posters/283761-1.jpg</thumbnail>
+<fanart>http://thetvdb.com/banners/fanart/original/283761-11.jpg</fanart>
+<meta>
+<content>tvshow</content>
+<imdb>tt3673794</imdb>
+<tvdb>283761</tvdb>
+<tvshowtitle>Kingdom</tvshowtitle>
+<year>2014</year>
+</meta>
+<link>Enoch</link>
+</dir>
+
+<dir>
 <name>American Gods</name>
 <thumbnail>https://images-na.ssl-images-amazon.com/images/M/MV5BMzI4NDE4MDY0Ml5BMl5BanBnXkFtZTgwNzU4MzY1MTI@._V1_SY1000_CR0,0,666,1000_AL_.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/253573-11.jpg</fanart>
