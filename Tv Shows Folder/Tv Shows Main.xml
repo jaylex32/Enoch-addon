@@ -13,7 +13,11 @@
 <tvshowtitle>Animal Kingdom</tvshowtitle>
 <year>2016</year>
 </meta>
-<link>Enoch</link>
+<link>
+<sublink name="Source 1 ">Enoch</sublink>
+<sublink name="Source 2 "></sublink>
+<sublink name="Source 3 ">Enoch</sublink>
+</link>
 </dir>
 
 <dir>
