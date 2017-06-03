@@ -7,16 +7,13 @@
 <thumbnail>http://thetvdb.com/banners/posters/304262-2.jpg</thumbnail>
 <fanart>http://thetvdb.com/banners/fanart/original/304262-3.jpg</fanart>
 <meta>
-<content></content>
+<content>tvshow</content>
 <imdb>tt5574490</imdb>
 <tvdb>304262</tvdb>
 <tvshowtitle>Animal Kingdom</tvshowtitle>
 <year>2016</year>
 </meta>
-<link>
-<sublink name="Source 1 ">https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Tv%20Shows%20Folder/Animal%20Kingdom%20Self%20Resolve.xml</sublink>
-<sublink name="Source 2 ">https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Tv%20Shows%20Folder/Animal%20Kingdom%20season%201.xml</sublink>
-</link>
+<link>Enoch</link>
 </dir>
 
 <dir>
