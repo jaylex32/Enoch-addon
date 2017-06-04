@@ -7,8 +7,8 @@
   <listrepeat><![CDATA[
         <title>[B][makelist.param1][/B]: [makelist.param3]</title>
         <link>
-        <sublink>search</sublink>
-        <sublink>searchsd</sublink>
+        <sublink>link</sublink>
+        <sublink>link</sublink>
         <thumbnail>[makelist.param3]</thumbnail>
         </link>
         <meta>
