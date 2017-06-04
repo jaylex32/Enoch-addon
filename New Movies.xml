@@ -5,16 +5,16 @@
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[makelist.param2]</title>
+        <title>[B][makelist.param1][/B]: [makelist.param3]</title>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
-        <thumbnail>[makelist.param2]</thumbnail>
+        <thumbnail>[makelist.param3]</thumbnail>
         </link>
         <meta>
         <content>movie</content>
-        <imdb>[makelist.param4]</imdb>
-        <title>[makelist.param2]</title>
+        <imdb>[makelist.param2]</imdb>
+        <title>[makelist.param1]</title>
         <year>[makelist.param1]</year>
         </meta>
 ]]></listrepeat>
