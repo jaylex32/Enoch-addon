@@ -154,3 +154,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'http://projectd.offshorepastebin.
 <link>plugin://plugin.video.Enoch/?action=developer</link>
 <thumbnail></thumbnail>
 </plugin>
+<plugin>
+<name>Movies Directory</name>
+<link>plugin://plugin.video.Enoch/?action=movie</link>
+<thumbnail></thumbnail>
+</plugin>
