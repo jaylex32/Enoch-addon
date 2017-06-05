@@ -23,7 +23,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import client,control
     import re,urllib
     u = client.request('http://m.imdb.com/chart/moviemeter?ref_=m_nv_mv_mvm')
-    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?unbold">([^<]*).+?\n([^\n]*).+?unbold">\(([^\)]*)', u)
+    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?unbold">([^<]*).+?\n([^\n]*).+?unbold">\(([^\)]*).+?btn-full">([^<]*).+?\n([^\n]*).+?btn-full">\(([^\)]*)', u)
     return e
 ]]></expres>
 <page></page>
