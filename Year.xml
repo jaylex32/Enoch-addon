@@ -13,7 +13,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
     u = client.request('http://www.dvdsreleasedates.com')
-    e = re.findall('w50.+?f=\'([^\']*)\'>([^<]*)', u)
+    e = re.findall('w33.+?f=\'([^\']*)\'>([^<]*)', u)
     e = [('http://www.dvdsreleasedates.com' + i[0] + '?sort=4&startdate=1995&enddate=2017', i[1]) for i in e if 'genre' in i[0]]
     return e
 ]]></expres>
@@ -22,7 +22,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param2][/B]</title>
+        <title>[B][makelist.param3][/B]</title>
         <thumbnail>[makelist.param1]</thumbnail>
         <link>
         <sublink>search</sublink>
@@ -40,7 +40,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
     u = client.request('[cats.param1]')
-    e = re.findall('dvdcell.+?rc=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
+    e = re.findall('dvdcell.+?src=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
     e = [(i[0], i[1], i[2],i[0].split('-')[-1].split('.')[0]) for i in e]
     return e
 ]]></expres>
