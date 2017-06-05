@@ -14,7 +14,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     import re,urllib,xbmc,xbmcgui
     u = client.request('http://www.dvdsreleasedates.com')
     e = re.findall('w33.+?f=\'([^\']*)\'>([^<]*)', u)
-    e = [('http://www.dvdsreleasedates.com' + i[0] + '?sort=4&startdate=1995&enddate=2017', i[1]) for i in e if 'year' in i[0]]
+    e = [('http://www.dvdsreleasedates.com' + i[0] + '?sort=4&startdate=1995&enddate=2017', i[1]) for i in e if 'genre' in i[0]]
     return e
 ]]></expres>
 <page></page>
