@@ -14,7 +14,7 @@
         <meta>
         <content>movie</content>
         <imdb>[makelist.param1]</imdb>
-        <title>[makelist.param4]</title>
+        <title>[makelist.param3]</title>
         <year>[makelist.param5]</year>
         </meta>
 ]]></listrepeat>
