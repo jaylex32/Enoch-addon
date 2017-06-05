@@ -5,7 +5,7 @@
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param3][/B] [makelist.param4]</title>
+        <title>[B][makelist.param3][/B] [makelist.param1]</title>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
