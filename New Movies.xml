@@ -1,30 +1,29 @@
 <item>
-<title>New Movies</title>
-<thumbnail>http://simpleicon.com/wp-content/uploads/new.png</thumbnail>
+<title>IMDB Top 200+</title>
+<thumbnail>http://phoenixtv.offshorepastebin.com/art/tv/phoenixmoviestoprated.png</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
+        <title>[B][makelist.param3][/B] [makelist.param4]</title>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
-        <thumbnail>[makelist.param3]</thumbnail>
+        <thumbnail>[makelist.param2]</thumbnail>
         </link>
         <meta>
         <content>movie</content>
-        <imdb>[makelist.param3]</imdb>
-        <title>[makelist.param1]</title>
-        <year>[makelist.param1]</year>
+        <imdb>[makelist.param1]</imdb>
+        <title>[makelist.param4]</title>
+        <year>[makelist.param5]</year>
         </meta>
 ]]></listrepeat>
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import cache,client,workers
-    import re,urllib,xbmc,xbmcgui
-    u = client.request('http://www.nzbmovieseeker.com/New/')
-    e = re.findall('(?s)class="release-wrapper">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
-    e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
+    from resources.lib.modules import client,control
+    import re,urllib
+    u = client.request('http://m.imdb.com/chart/moviemeter?ref_=m_nv_mv_mvm')
+    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?unbold">([^<]*).+?\n([^\n]*).+?unbold">\(([^\)]*)', u)
     return e
 ]]></expres>
 <page></page>
