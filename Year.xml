@@ -22,7 +22,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param3][/B]</title>
+        <title>[B][makelist.param2][/B]</title>
         <thumbnail>[makelist.param1]</thumbnail>
         <link>
         <sublink>search</sublink>
