@@ -1,0 +1,13 @@
+<dir>
+<name>Most Popular</name>
+<link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Movies.xml</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+</dir>
+
+<dir>
+<name>Recently Added</name>
+<link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Movies%20Recently%20Added.xml</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+</dir>
