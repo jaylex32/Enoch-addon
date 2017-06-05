@@ -5,7 +5,7 @@
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param4][/B] [makelist.param3]</title>
+        <title>[B][makelist.param3][/B] [makelist.param4]</title>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
@@ -14,7 +14,7 @@
         <meta>
         <content>movie</content>
         <imdb>[makelist.param1]</imdb>
-        <title>[makelist.param3]</title>
+        <title>[makelist.param4]</title>
         <year>[makelist.param5]</year>
         </meta>
 ]]></listrepeat>
@@ -22,8 +22,8 @@
 def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import client,control
     import re,urllib
-    u = client.request('http://m.imdb.com/chart/moviemeter?ref_=m_nv_mv_mvm')
-    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?<h4>.+?\([^<]*).+?\n([^\n]*).+?unbold">\(([^\)]*)', u)
+    u = client.request('http://m.imdb.com/chart/bestpicture/?ref_=m_nv_mv_osc')
+    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?unbold">([^<]*).+?\n([^\n]*).+?unbold">\(([^\)]*)', u)
     return e
 ]]></expres>
 <page></page>
