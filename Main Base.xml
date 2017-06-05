@@ -69,8 +69,8 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 
 
 <item>
-<name>New Movies</name>
-<thumbnail>http://simpleicon.com/wp-content/uploads/new.png</thumbnail>
+<name>IMDB Zone</name>
+<thumbnail>http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png</thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
