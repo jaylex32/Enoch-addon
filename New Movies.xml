@@ -1,5 +1,5 @@
 <item>
-<title>IMDB Top 200+</title>
+<title>IMDB Best Picture Winners</title>
 <thumbnail>http://phoenixtv.offshorepastebin.com/art/tv/phoenixmoviestoprated.png</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
