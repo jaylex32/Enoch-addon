@@ -19,6 +19,13 @@
 <fanart></fanart>
 </dir>
 
+<dir>
+<name>IMDB Zone</name>
+<link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/New%20Movies.xml</link>
+<thumbnail>http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png</thumbnail>
+<fanart></fanart>
+</dir>
+
 
 
 
