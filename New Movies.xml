@@ -93,3 +93,35 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <page></page>
 </regex>
 </item>
+
+<item>
+<title>IMDB Best Picture Winners</title>
+<thumbnail>http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png</thumbnail>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[B][makelist.param3][/B] [makelist.param5]</title>
+        <link>
+        <sublink>search</sublink>
+        <sublink>searchsd</sublink>
+        <thumbnail>[makelist.param2]</thumbnail>
+        </link>
+        <meta>
+        <content>movie</content>
+        <imdb>[makelist.param1]</imdb>
+        <title>[makelist.param3]</title>
+        <year>[makelist.param5]</year>
+        </meta>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client,control
+    import re,urllib
+    u = client.request('http://www.imdb.com/sections/dvd/')
+    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?info">([^<]*).+?\n([^\n]*).+?year_type">\(([^\)]*)', u)
+    return e
+]]></expres>
+<page></page>
+</regex>
+</item>
