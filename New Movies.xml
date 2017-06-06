@@ -119,7 +119,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import client,control
     import re,urllib
     u = client.request('http://www.imdb.com/sections/dvd/')
-    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?info">([^<]*).+?\n([^\n]*).+?year_type">\(([^\)]*)', u)
+    e = re.findall('(?s)class="media">.+?tconst="([^"]*).+?src-x2="([^"]*).+?number">([^<]*).+?\n([^\n]*).+?year_type">\(([^\)]*)', u)
     return e
 ]]></expres>
 <page></page>
