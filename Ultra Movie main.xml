@@ -97,4 +97,36 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 </regex>
 </item>
 
+<item>
+<title>Top Watchlist</title>
+<thumbnail>https://pbs.twimg.com/profile_images/1303534605/logo_top_movies_02.png</thumbnail>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
+        <link>
+        <sublink>search</sublink>
+        <sublink>searchsd</sublink>
+        <thumbnail>[makelist.param4]</thumbnail>
+        </link>
+        <meta>
+        <content>movie</content>
+        <imdb>[makelist.param3]</imdb>
+        <title>[makelist.param1]</title>
+        <year>[makelist.param2]</year>
+        </meta>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import cache,client,workers
+    import re,urllib,xbmc,xbmcgui
+    u = client.request('http://www.nzbmovieseeker.com/Toplists/Watchlist/')
+    e = re.findall('(?s)class="release-wrapper">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
+    e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
+    return e
+]]></expres>
+<page></page>
+</regex>
+</item>
 
