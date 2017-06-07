@@ -1,7 +1,7 @@
 <item>
 <title>Vodly.us - Trending</title>
 <link>$doregex[makelist]</link>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/tv/phoenixmoviestoprated.png</thumbnail>
+<thumbnail>http://vodly.us/logo.png</thumbnail>
 <regex>
 <name>makelist</name>
 <listrepeat><![CDATA[
@@ -39,7 +39,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <name>makelist2</name>
 <listrepeat><![CDATA[
 <title>[makelist2.param1]</title>
-<link>$doregex[play]</link>
+<link>search</link>
 <thumbnail>[makelist.param3]</thumbnail>
 ]]></listrepeat>
 <expres><![CDATA[#$pyFunction
