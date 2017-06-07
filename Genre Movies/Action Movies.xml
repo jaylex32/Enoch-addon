@@ -22,7 +22,7 @@
 def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
-    u = client.request('http://www.nzbmovieseeker.com/Genre/Action/Page/.+?')
+    u = client.request('http://www.nzbmovieseeker.com/Genre/Action/')
     e = re.findall('(?s)id="NewPosts">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
     e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
     return e
