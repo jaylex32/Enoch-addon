@@ -1,6 +1,6 @@
 <item>
 <title>Top Movies This Year</title>
-<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
+<thumbnail>https://pbs.twimg.com/profile_images/1303534605/logo_top_movies_02.png</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
@@ -33,7 +33,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 
 <item>
 <title>Top Movies This Month</title>
-<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
+<thumbnail>https://pbs.twimg.com/profile_images/1303534605/logo_top_movies_02.png</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
@@ -66,7 +66,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 
 <item>
 <title>Top Movies This Week</title>
-<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
+<thumbnail>https://pbs.twimg.com/profile_images/1303534605/logo_top_movies_02.png</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
