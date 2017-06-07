@@ -39,7 +39,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <name>makelist2</name>
 <listrepeat><![CDATA[
 <title>[makelist2.param1]</title>
-<link>search</link>
+<link>$doregex[play]</link>
 <thumbnail>[makelist.param3]</thumbnail>
 ]]></listrepeat>
 <expres><![CDATA[#$pyFunction
@@ -49,6 +49,19 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     u = client.request('[makelist.param1]')
     e = re.findall('(?s)<tr>.+?<td>([^<]*).+?ef="([^"]*)', u)
     e = [(i[0],'http://vodly.us' + i[1]) for i in e]
+    return e
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>play</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re, urllib, xbmc, xbmcgui
+    u = client.request('[makelist2.param2]')
+    e = client.parseDOM(u, 'div', attrs = {'class': 'wrap'})
+    e = (client.parseDOM(e, 'a', ret='href')[0])
     return e
 ]]></expres>
 <page></page>
