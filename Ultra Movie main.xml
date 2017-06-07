@@ -1,76 +1,6 @@
 <item>
-<title>Vodly.us - Trending</title>
-<link>$doregex[makelist]</link>
-<thumbnail>http://vodly.us/logo.png</thumbnail>
-<regex>
-<name>makelist</name>
-<listrepeat><![CDATA[
-        <title>[makelist.param2]</title>
-        <link>$doregex[makelist2]</link>
-        <thumbnail>[makelist.param3]</thumbnail>
-]]></listrepeat>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import client,cache,workers 
-    import re
-
-    class page:
-        def run(self, r):
-            threads = [] ; self.r = [] ; r = [(r.index(i)+1, i) for i in r]
-            for i in r: threads.append(workers.Thread(self.request, i))
-            [i.start() for i in threads] ; [i.join() for i in threads]
-            return ''.join([str(i[1]) for i in sorted(self.r, key=lambda x: x[0])])
-        def request(self, i):
-            self.r += [(i[0], str(client.request(i[1])))]
-
-    url = []
-    for i in range(1, 6): url += ['http://vodly.us/movies/popular?page=' + str(i)]
-    u = cache.get(page().run, 0, url)
-    u = u.replace('Watch', '')
-    u = u.replace(' /', '/')
-    e = client.parseDOM(u, 'div', attrs = {'class': 'item-img'})
-    e = [(client.parseDOM(i, 'a', ret='href')[0] , client.parseDOM(i, 'a', ret='title')[0] , client.parseDOM(i, 'img', ret='src')[0]) for i in e]
-    e = [('http://vodly.us' + i[0], i[1], 'http://vodly.us' + i[2]) for i in e]
-    return e
-]]></expres>
-<page></page>
-</regex>
-<regex>
-<name>makelist2</name>
-<listrepeat><![CDATA[
-<title>[makelist2.param1]</title>
-<link>$doregex[play]</link>
-<thumbnail>[makelist.param3]</thumbnail>
-]]></listrepeat>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import client
-    import re, urllib, xbmc, xbmcgui
-    u = client.request('[makelist.param1]')
-    e = re.findall('(?s)<tr>.+?<td>([^<]*).+?ef="([^"]*)', u)
-    e = [(i[0],'http://vodly.us' + i[1]) for i in e]
-    return e
-]]></expres>
-<page></page>
-</regex>
-<regex>
-<name>play</name>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import client
-    import re, urllib, xbmc, xbmcgui
-    u = client.request('[makelist2.param2]')
-    e = client.parseDOM(u, 'div', attrs = {'class': 'wrap'})
-    e = (client.parseDOM(e, 'a', ret='href')[0])
-    return e
-]]></expres>
-<page></page>
-</regex>
-</item>
-
-<item>
-<title>Most Popular This Year</title>
-<thumbnail></thumbnail>
+<title>Top Movies This Year</title>
+<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
@@ -100,3 +30,71 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 <page></page>
 </regex>
 </item>
+
+<item>
+<title>Top Movies This Month</title>
+<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
+        <link>
+        <sublink>search</sublink>
+        <sublink>searchsd</sublink>
+        <thumbnail>[makelist.param4]</thumbnail>
+        </link>
+        <meta>
+        <content>movie</content>
+        <imdb>[makelist.param3]</imdb>
+        <title>[makelist.param1]</title>
+        <year>[makelist.param2]</year>
+        </meta>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import cache,client,workers
+    import re,urllib,xbmc,xbmcgui
+    u = client.request('http://www.nzbmovieseeker.com/Toplists/Downloads/Month/')
+    e = re.findall('(?s)class="release-wrapper">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
+    e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
+    return e
+]]></expres>
+<page></page>
+</regex>
+</item>
+
+<item>
+<title>Top Movies This Week</title>
+<thumbnail>http://www.nzbmovieseeker.com/images/logo.gif</thumbnail>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
+        <link>
+        <sublink>search</sublink>
+        <sublink>searchsd</sublink>
+        <thumbnail>[makelist.param4]</thumbnail>
+        </link>
+        <meta>
+        <content>movie</content>
+        <imdb>[makelist.param3]</imdb>
+        <title>[makelist.param1]</title>
+        <year>[makelist.param2]</year>
+        </meta>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import cache,client,workers
+    import re,urllib,xbmc,xbmcgui
+    u = client.request('http://www.nzbmovieseeker.com/Toplists/')
+    e = re.findall('(?s)class="release-wrapper">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
+    e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
+    return e
+]]></expres>
+<page></page>
+</regex>
+</item>
+
+
