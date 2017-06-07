@@ -1,6 +1,6 @@
 <item>
 <title>Action</title>
-<thumbnail>https://pbs.twimg.com/profile_images/1303534605/logo_top_movies_02.png</thumbnail>
+<thumbnail></thumbnail>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
@@ -23,7 +23,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
     u = client.request('http://www.nzbmovieseeker.com/Genre/Action/')
-    e = re.findall('(?s)class="release-wrapper">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
+    e = re.findall('(?s)class="movie-title">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
     e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
     return e
 ]]></expres>
