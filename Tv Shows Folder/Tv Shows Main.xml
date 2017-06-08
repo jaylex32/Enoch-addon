@@ -157,15 +157,15 @@
 </dir>
 
 <dir>
-<name></name>
-<thumbnail></thumbnail>
-<fanart></fanart>
+<name>El Chapo</name>
+<thumbnail>http://thetvdb.com/banners/posters/326027-1.jpg</thumbnail>
+<fanart>http://thetvdb.com/banners/fanart/original/326027-5.jpg</fanart>
 <meta>
-<content></content>
-<imdb></imdb>
-<tvdb></tvdb>
-<tvshowtitle></tvshowtitle>
-<year></year>
+<content>tvshow</content>
+<imdb>tt6692188</imdb>
+<tvdb>326027</tvdb>
+<tvshowtitle>El Chapo</tvshowtitle>
+<year>2017</year>
 </meta>
 <link>Enoch</link>
 </dir>
