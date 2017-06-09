@@ -40,7 +40,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
     u = client.request('[cats.param1]')
-    e = re.findall(class='dvdcell.+?rc=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
+    e = re.findall(class='dvdcell'>.+?src=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
     e = [(i[0], i[1], i[2],i[0].split('-')[-1].split('.')[0]) for i in e]
     return e
 ]]></expres>
