@@ -5,7 +5,7 @@
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param1][/B]: [makelist.param2] [COLOR cyan][makelist.param3][/COLOR]</title>
+        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
         <link>
         <sublink>Enoch</sublink>
         <sublink>Enoch</sublink>
@@ -16,7 +16,7 @@
         <meta>
         <content>tvshow</content>
         <imdb>[makelist.param7]</imdb>
-        <tvdb>[makelist.param6]</tvdb>
+        <tvdb>[makelist.param3]</tvdb>
         <title>[makelist.param1]</title>
         <year>[makelist.param2]</year>
         </meta>
