@@ -16,7 +16,7 @@
         <meta>
         <content>tvshow</content>
         <imdb>[makelist.param5]</imdb>
-        <tvdb>[makelist.param5]</tvdb>
+        <tvdb>[makelist.param3]</tvdb>
         <title>[makelist.param1]</title>
         <year>[makelist.param2]</year>
         </meta>
