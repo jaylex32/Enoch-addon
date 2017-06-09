@@ -1,30 +1,47 @@
 <item>
-<title>Action</title>
-<thumbnail></thumbnail>
-<link>$doregex[makelist]</link>
+<title>Genres</title>
+<thumbnail>http://phoenixtv.offshorepastebin.com/art/tv/phoenixmoviesgenre.png</thumbnail>
+<link>$doregex[cats]</link>
+<regex>
+  <name>cats</name>
+  <listrepeat><![CDATA[
+        <title>[B][cats.param2][/B]</title>
+        <link>$doregex[makelist]</link>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import cache,client,workers
+    import re,urllib,xbmc,xbmcgui
+    u = client.request('http://www.dvdsreleasedates.com')
+    e = re.findall('w33.+?f=\'([^\']*)\'>([^<]*)', u)
+    e = [('http://www.dvdsreleasedates.com' + i[0] + '?sort=4&startdate=1995&enddate=2017', i[1]) for i in e if 'genre' in i[0]]
+    return e
+]]></expres>
+<page></page>
+</regex>
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param1][/B]: [makelist.param2]</title>
+        <title>[B][makelist.param2][/B]</title>
+        <thumbnail>[makelist.param1]</thumbnail>
         <link>
         <sublink>search</sublink>
         <sublink>searchsd</sublink>
-        <thumbnail>[makelist.param4]</thumbnail>
         </link>
         <meta>
         <content>movie</content>
         <imdb>[makelist.param3]</imdb>
-        <title>[makelist.param1]</title>
-        <year>[makelist.param2]</year>
+        <title>[makelist.param2]</title>
+        <year>[makelist.param4]</year>
         </meta>
 ]]></listrepeat>
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
-    u = client.request('http://www.nzbmovieseeker.com/Genre/Action/Page-301.html')
-    e = re.findall('(?s)id="NewPosts">.+?f="[^"]*.+?>([^\(]*)\(([^\)]*).+?bar" id="([^"]*).+?img src="([^"]*)', u)
-    e = [(i[0],i[1],'tt'+i[2],i[3]) for i in e]
+    u = client.request('[cats.param1]')
+    e = re.findall('dvdcell.+?rc=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
+    e = [(i[0], i[1], i[2],i[0].split('-')[-1].split('.')[0]) for i in e]
     return e
 ]]></expres>
 <page></page>
