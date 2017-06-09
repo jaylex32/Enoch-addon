@@ -1,47 +1,43 @@
 <item>
-<title>Genres</title>
+<title>Latest Quality Releases [COLOR cyan](Plus RD Links)[/COLOR]</title>
 <thumbnail></thumbnail>
-<link>$doregex[cats]</link>
-<regex>
-  <name>cats</name>
-  <listrepeat><![CDATA[
-        <title>[B][cats.param2][/B]</title>
-        <link>$doregex[makelist]</link>
-]]></listrepeat>
-<expres><![CDATA[#$pyFunction
-def GetLSProData(page_data,Cookie_Jar,m,url = ''):
-    from resources.lib.modules import cache,client,workers
-    import re,urllib,xbmc,xbmcgui
-    u = client.request('http://www.dvdsreleasedates.com')
-    e = re.findall('w33.+?f=\'([^\']*)\'>([^<]*)', u)
-    e = [('http://www.dvdsreleasedates.com' + i[0] + '?sort=4&startdate=1995&enddate=2017', i[1]) for i in e if 'genre' in i[0]]
-    return e
-]]></expres>
-<page></page>
-</regex>
+<link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
-        <title>[B][makelist.param2][/B]</title>
-        <thumbnail>[makelist.param1]</thumbnail>
+        <title>[B][makelist.param1][/B]: [makelist.param2] [COLOR cyan][makelist.param3][/COLOR]</title>
         <link>
-        <sublink>search</sublink>
-        <sublink>searchsd</sublink>
+        <sublink>Enoch</sublink>
+        <sublink>Enoch</sublink>
+        <sublink[COLOR cyan]Real-Debrid[/COLOR]>[makelist.param6]</sublink>
+        <sublink[COLOR cyan]Real-Debrid[/COLOR]>[makelist.param8]</sublink>
+        <thumbnail>[makelist.param4]</thumbnail>
         </link>
         <meta>
-        <content>movie</content>
-        <imdb>[makelist.param3]</imdb>
-        <title>[makelist.param2]</title>
-        <year>[makelist.param4]</year>
+        <content>tvshow</content>
+        <imdb>[makelist.param5]</imdb>
+        <title>[makelist.param1]</title>
+        <year>[makelist.param2]</year>
         </meta>
 ]]></listrepeat>
 <expres><![CDATA[#$pyFunction
 def GetLSProData(page_data,Cookie_Jar,m,url = ''):
     from resources.lib.modules import cache,client,workers
     import re,urllib,xbmc,xbmcgui
-    u = client.request('[cats.param1]')
-    e = re.findall(class='dvdcell'>.+?src=\'([^\']*).+?\'>([^<]*).+?title\/([^\/]*)', u)
-    e = [(i[0], i[1], i[2],i[0].split('-')[-1].split('.')[0]) for i in e]
+    class page:
+        def run(self, r):
+            threads = [] ; self.r = [] ; r = [(r.index(i)+1, i) for i in r]
+            for i in r: threads.append(workers.Thread(self.request, i))
+            [i.start() for i in threads] ; [i.join() for i in threads]
+            return ''.join([str(i[1]) for i in sorted(self.r, key=lambda x: x[0])])
+        def request(self, i):
+            self.r += [(i[0], str(client.request(i[1])))]         
+
+    url = []
+    for i in range(1, 10): url += ['http://scene-rls.net/category/tvshows/page/' + str(i)]
+    u = cache.get(page().run, 0, url)
+    e = re.findall('(?s)postHeader.+?Permalink to ([^\d]*\w) ([^\s]*) ([^"]*).+?c="([^"]*).+?title\/([^\/]*).+?<h.+?href="([^"]*)">([^<]*).+?f="([^"]*).+?>([^<]*)', u)
+    e = [(i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8]) for i in e if 'scene-rls' not in i[5]]
     return e
 ]]></expres>
 <page></page>
