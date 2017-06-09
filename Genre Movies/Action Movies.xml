@@ -1,6 +1,6 @@
 <item>
 <title>Genres</title>
-<thumbnail>http://phoenixtv.offshorepastebin.com/art/tv/phoenixmoviesgenre.png</thumbnail>
+<thumbnail></thumbnail>
 <link>$doregex[cats]</link>
 <regex>
   <name>cats</name>
