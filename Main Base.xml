@@ -17,7 +17,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = 'https://raw.githubusercontent.com
 </item>
 <item>
 <name>Tv Shows</name>
-<thumbnail>https://lh3.googleusercontent.com/-CWbEYzHxT_I/AAAAAAAAAAI/AAAAAAAAABY/ExNlzfnG8OQ/photo.jpg</thumbnail>
+<thumbnail>https://openclipart.org/image/800px/svg_to_png/86419/provider-tv.png</thumbnail>
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
