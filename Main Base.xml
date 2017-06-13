@@ -51,7 +51,7 @@ def GetLSProData(page_data,Cookie_Jar,m,url = ''):
 </item>
 <item>
 <name>Latinos Zone</name>
-<thumbnail>https://es-static.z-dn.net/files/d37/e543fcb45a1ab7adc4d3bafc2e13d2fb.jpg</thumbnail> 
+<thumbnail>https://thumb1.shutterstock.com/display_pic_with_logo/875032/541927843/stock-vector-flags-of-latin-america-countries-on-buttons-colorful-design-vector-illustration-541927843.jpg</thumbnail> 
 <link>$doregex[dir]</link>
 <regex>
 <name>dir</name>
