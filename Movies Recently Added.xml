@@ -482,16 +482,19 @@
 
 
 <item>
-<title></title>
+<title>Doctor Strange</title>
 <meta>
 <content>movie</content>
-<imdb></imdb>
-<title></title>
-<year></year>
+<imdb>tt1211837</imdb>
+<title>Doctor Strange</title>
+<year>2016</year>
 </meta>
-<link>search</link>
-<thumbnail></thumbnail>
-<fanart></fanart>
+<link>
+<sublink name="Stream 1 ">https://www.rapidvideo.com/v/FGK38MU326</sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
+<thumbnail>https://images-na.ssl-images-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg</thumbnail>
+<fanart>https://fanart.tv/fanart/movies/284052/moviebackground/doctor-strange-5734645f95a89.jpg</fanart>
 </item>
 
 
