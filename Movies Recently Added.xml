@@ -545,8 +545,13 @@
 
 <item>
 <title>Bridge of Spies</title>
-<info>During the Cold War, an American lawyer is recruited to defend an arrested Soviet spy in court, and then help the CIA facilitate an exchange of the spy for the Soviet captured American U2 spy plane pilot, Francis Gary Powers.</info>
+<meta>
+<content>movie</content>
+<imdb>tt3682448</imdb>
+<title>Bridge of Spies</title>
 <year>2015</year>
+<plot>During the Cold War, an American lawyer is recruited to defend an arrested Soviet spy in court, and then help the CIA facilitate an exchange of the spy for the Soviet captured American U2 spy plane pilot, Francis Gary Powers.</plot>
+</meta>
 <link>
 <sublink name="Stream 1 ">empty</sublink>
 <sublink name="Stream 2 ">search</sublink>
