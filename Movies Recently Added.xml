@@ -544,14 +544,17 @@
 
 
 <item>
-<title></title>
+<title>Bridge of Spies</title>
 <meta>
 <content>movie</content>
-<imdb></imdb>
-<title></title>
-<year></year>
+<info>During the Cold War, an American lawyer is recruited to defend an arrested Soviet spy in court, and then help the CIA facilitate an exchange of the spy for the Soviet captured American U2 spy plane pilot, Francis Gary Powers.</info>
+<title>Bridge of Spies</title>
+<year>2015</year>
 </meta>
-<link>search</link>
+<link>
+<sublink name="Stream 1 "></sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
 </item>
@@ -565,7 +568,10 @@
 <title></title>
 <year></year>
 </meta>
-<link>search</link>
+<link>
+<sublink name="Stream 1 "></sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
 </item>
@@ -579,7 +585,10 @@
 <title></title>
 <year></year>
 </meta>
-<link>search</link>
+<link>
+<sublink name="Stream 1 "></sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
 </item>
@@ -593,7 +602,10 @@
 <title></title>
 <year></year>
 </meta>
-<link>search</link>
+<link>
+<sublink name="Stream 1 "></sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
 </item>
@@ -607,7 +619,10 @@
 <title></title>
 <year></year>
 </meta>
-<link>search</link>
+<link>
+<sublink name="Stream 1 "></sublink>
+<sublink name="Stream 2 ">search</sublink>
+</link>
 <thumbnail></thumbnail>
 <fanart></fanart>
 </item>
