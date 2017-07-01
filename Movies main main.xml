@@ -1,4 +1,11 @@
 <dir>
+<name>New Releases</name>
+<link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Movie%20New%20Releases.xml</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+</dir>
+
+<dir>
 <name>Most Popular</name>
 <link>https://raw.githubusercontent.com/jaylex32/Enoch-addon/master/Movies.xml</link>
 <thumbnail></thumbnail>
@@ -33,12 +40,7 @@
 <fanart></fanart>
 </dir>
 
-<dir>
-<name></name>
-<link></link>
-<thumbnail></thumbnail>
-<fanart></fanart>
-</dir>
+
 
 
 
